@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(249, 234, 240);
+            color: purple;
+            margin: 0;
+            padding: 0;
+        }
+        
+        form {
+            width: 85%;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 10px;
+        }
+        
+        fieldset {
+            border: 2px solid purple;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        legend {
+            font-size: 1.2em;
+            color: purple;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 10px;
+        }
+        
+        .form-group label {
+            display: inline-block;
+            font-weight: bold;
+        }
+        
+        .inline-group {
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        .inline-group label {
+            font-weight: normal;
+            margin-right: 10px;
+        }
+        
+        input[type="text"], select, textarea {
+            width: 200px;
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid purple;
+            border-radius: 3px;
+        }
+        
+        textarea {
+            width: 400px;
+            resize: vertical;
+        }
+        
+        .botones {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        input[type="submit"], input[type="reset"] {
+            padding: 10px 20px;
+            background-color: purple;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #770ec2;
+        }
+        
+        .obligatorio{
+            color: red;
+        }
+        
+        .mensaje_campo{
+            margin-left: 6%;
+        }
+
+    </style>
+</head>
+<body>
+    <p class="mensaje_campo"><span class="obligatorio">&nbsp;*</span> Campo obligatorio.</p>
+    <form method="post">
+        <!-- Datos Personales -->
+        <fieldset>
+            <legend>DATOS PERSONALES</legend>
+            <div class="form-group">
+                <label for="nombre"><span class="obligatorio">*</span>Nombre:</label>
+                <input type="text" id="nombre" name="nombre" maxlength="20" accesskey="n" title="Ingrese su nombre" required>
+                <label for="apellido1"><span class="obligatorio">&nbsp;*</span>Primer Apellido:</label>
+                <input type="text" id="apellido1" name="apellido1" maxlength="20" accesskey="a" title="Ingrese su primer apellido" required>
+                <label for="apellido2"><span class="obligatorio">&nbsp;*</span>Segundo Apellido:</label>
+                <input type="text" id="apellido2" name="apellido2" maxlength="20" accesskey="s" title="Ingrese su segundo apellido" required>
+            </div>
+            <div class="form-group">
+                <label><span class="obligatorio">*</span>Sexo:</label>
+                <div class="inline-group">
+                    <input type="radio" id="hombre" name="sexo" value="Hombre" accesskey="h" required>
+                    <label for="hombre">Hombre</label>
+                    <input type="radio" id="mujer" name="sexo" value="Mujer" accesskey="m">
+                    <label for="mujer">Mujer</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label><span class="obligatorio">*</span>Grupo de edad:</label>
+                <div class="inline-group">
+                    <input type="radio" id="menor20" name="edad" value="Menor de 20" accesskey="1" required>
+                    <label for="menor20">Menor de 20</label>
+                    <input type="radio" id="de20a35" name="edad" value="De 20 a 35" accesskey="2">
+                    <label for="de20a35">20-35</label>
+                    <input type="radio" id="de36a50" name="edad" value="De 36 a 50" accesskey="3">
+                    <label for="de36a50">36-50</label>
+                    <input type="radio" id="mayor50" name="edad" value="Mayor de 50" accesskey="4">
+                    <label for="mayor50">Mayor de 50</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pais"><span class="obligatorio">*</span>País de nacimiento:</label>
+                <select id="pais" name="pais" accesskey="p" required="" title="Seleccione su país de nacimiento">
+                    <option value="">Seleccione un país...</option>
+                    <option value="Alemania">Alemania</option>
+                    <option value="Bolivia">Bolivia</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Dinamarca">Dinamarca</option>
+                    <option value="España">España</option>
+                    <option value="Finlandia">Finlandia</option>
+                    <option value="Grecia">Grecia</option>
+                    <option value="Holanda">Holanda</option>
+                    <option value="Italia">Italia</option>
+                    <option value="Luxemburgo">Luxemburgo</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <!-- Datos Bancarios -->
+        <fieldset>
+            <legend>DATOS BANCARIOS</legend>
+            <div class="form-group">
+                <label for="ccc">C.C.C:</label>
+                <input type="text" id="ccc" name="ccc" maxlength="20" title="Ingrese su Código de Cuenta Corriente">
+            </div>
+            <div class="form-group">
+                <label>Tipo de cuenta:</label>
+                <div class="inline-group">
+                    <input type="radio" id="ahorro" name="cuenta" value="Ahorro">
+                    <label for="ahorro">De ahorro</label>
+                    <input type="radio" id="corriente" name="cuenta" value="Corriente">
+                    <label for="corriente">Corriente</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Tipo de sucursal:</label>
+                <div class="inline-group">
+                    <input type="radio" id="banco" name="sucursal" value="Banco">
+                    <label for="banco">Banco</label>
+                    <input type="radio" id="caja" name="sucursal" value="Caja">
+                    <label for="caja">Caja</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Servicios contratados:</label>
+                <div class="inline-group">
+                    <input type="checkbox" id="nomina" name="nomina">
+                    <label for="nomina">Nómina domiciliada</label>
+                    <input type="checkbox" id="hipoteca" name="hipoteca">
+                    <label for="hipoteca">Préstamo hipotecario</label>
+                    <input type="checkbox" id="personal" name="personal">
+                    <label for="personal">Préstamo personal</label>
+                    <input type="checkbox" id="seguridad" name="seguridad">
+                    <label for="seguridad">Caja de seguridad</label>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Otros Datos de Interés -->
+        <fieldset>
+            <legend>OTROS DATOS DE INTERÉS</legend>
+            <div class="form-group">
+                <label>¿Está usted interesado en alguno de estos temas?</label>
+                <div class="inline-group">
+                    <input type="checkbox" id="libros" name="libros">
+                    <label for="libros">Libros</label>
+                    <input type="checkbox" id="viajes" name="viajes">
+                    <label for="viajes">Viajes</label>
+                    <input type="checkbox" id="informatica" name="informatica">
+                    <label for="informatica">Informática</label>
+                    <input type="checkbox" id="cursos" name="cursos">
+                    <label for="cursos">Cursos</label>
+                    <input type="checkbox" id="seguros" name="seguros">
+                    <label for="seguros">Seguros</label>
+                    <input type="checkbox" id="musica" name="musica">
+                    <label for="musica">Música</label>
+                    <input type="checkbox" id="apuestas" name="apuestas">
+                    <label for="apuestas">Apuestas</label>
+                    <input type="checkbox" id="idiomas" name="idiomas">
+                    <label for="idiomas">Idiomas</label>
+                    <input type="checkbox" id="empleo" name="empleo">
+                    <label for="empleo">Empleo</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="otros">Otros temas:</label><br>
+                <textarea id="otros" rows="3" cols="30" placeholder="Escriba aquí sus temas de interés"></textarea>
+            </div>
+        </fieldset>
+
+        <!-- Botones -->
+        <div class="botones">
+            <input type="submit" value="Enviar datos del formulario">
+            <input type="reset" value="Limpiar datos del formulario">
+        </div>
+    </form>
+    <p class="mensaje_campo"><span class="obligatorio">&nbsp;*</span> Campo obligatorio.</p>
+</body>
+</html>
